@@ -1,7 +1,7 @@
 
-# create-my-stack 🚀
+# @anmol117/@anmol117/@anmol117/stacksmith 🚀
 
-`create-my-stack` is a simple CLI tool to scaffold fullstack projects with a pre-configured stack. It supports frontend, backend, and fullstack templates with options like Redux, TailwindCSS, React Router, and Express.js.
+`@anmol117/@anmol117/@anmol117/stacksmith` is a simple CLI tool to scaffold fullstack projects with a pre-configured stack. It supports frontend, backend, and fullstack templates with options like Redux, TailwindCSS, React Router, and Express.js.
 
 ## 📦 Features
 
@@ -18,13 +18,13 @@
 ## 🛠️ Installation
 
 ```bash
-npm install -g create-my-stack
+npm install -g @anmol117/stacksmith
 ````
 
 Or use directly with `npx`:
 
 ```bash
-npx create-my-stack
+npx @anmol117/stacksmith
 ```
 
 ---
@@ -32,13 +32,13 @@ npx create-my-stack
 ## ⚙️ Usage
 
 ```bash
-create-my-stack <type> [options]
+@anmol117/stacksmith <type> [options]
 ```
 
 ### Example
 
 ```bash
-create-my-stack frontend --with-redux
+@anmol117/stacksmith frontend --with-redux
 ```
 
 You’ll be prompted to enter a folder name. The project will be scaffolded and dependencies auto-installed.
