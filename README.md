@@ -66,6 +66,6 @@ my-app/
 
 ## 📄 License
 
-MIT © [Anmol](https://github.com/anmolawasthi117)
+MIT © [Anmol](https://github.com/Anmolawasthi117)
 
 
