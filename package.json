@@ -1,6 +1,6 @@
 {
   "name": "@anmol117/stacksmith",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "CLI to scaffold fullstack apps with Vite + Tailwind + React Router + backend",
   "type": "module",
   "bin": {
@@ -17,10 +17,11 @@
   "author": "anmol",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^5.3.0",
-    "commander": "^11.0.0",
-    "fs-extra": "^11.2.0",
-    "ora": "^7.0.1",
-    "prompts": "^2.4.2"
-  }
+  "chalk": "^5.3.0",
+  "commander": "^11.0.0",
+  "fs-extra": "^11.2.0",
+  "ora": "^7.0.1",
+  "prompts": "^2.4.2",
+  "inquirer": "^9.2.11"
+}
 }
