@@ -6,28 +6,29 @@ import { fileURLToPath } from "url";
 import { execSync } from "child_process";
 import chalk from "chalk";
 import ora from "ora";
-import { program } from "commander";
-import prompts from "prompts";
+import inquirer from "inquirer";
+import { Command } from "commander";
 
-// Fix __dirname for ESM
+const program = new Command();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 program
-  .name("create-my-stack")
+  .name("stacksmith")
   .description("CLI to scaffold fullstack projects")
   .argument("<type>", "frontend | backend | fullstack")
   .option("--with-redux", "Include Redux in frontend")
   .action(async (type, options) => {
-    const response = await prompts({
-      type: "text",
-      name: "folderName",
-      message: "Enter your project folder name:",
-      initial: "my-app"
-    });
+    const { folderName } = await inquirer.prompt([
+      {
+        type: "input",
+        name: "folderName",
+        message: "Enter your project folder name:",
+        default: "my-app",
+      },
+    ]);
 
-    const folderName = response.folderName.trim();
-    const projectDir = path.join(process.cwd(), folderName);
     const spinner = ora("Scaffolding your project...").start();
 
     let template = "";
@@ -43,18 +44,19 @@ program
       process.exit(1);
     }
 
+    const projectDir = path.join(process.cwd(), folderName);
     const templateDir = path.join(__dirname, "templates", template);
 
     try {
       await fs.copy(templateDir, projectDir);
+      spinner.succeed("Project created successfully!");
+      console.log(chalk.green(`✅ ${type} project is ready in "${folderName}"`));
 
-      // Install dependencies
-      execSync("npm install", { cwd: projectDir, stdio: "inherit" });
+      const installSpinner = ora("Installing dependencies...").start();
+      execSync("npm install", { stdio: "inherit", cwd: projectDir });
+      installSpinner.succeed("Dependencies installed");
 
-      spinner.succeed("Project created and dependencies installed!");
-
-      console.log(chalk.green("✅ All set!"));
-      console.log(chalk.cyan(`👉 cd ${folderName}`));
+      console.log(chalk.cyan(`👉 cd ${folderName} && start building!`));
     } catch (err) {
       spinner.fail("Error setting up the project:");
       console.error(err);
