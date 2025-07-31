@@ -1,7 +1,7 @@
 
-# @anmol117/@anmol117/@anmol117/stacksmith 🚀
+# @anmol117/stacksmith 🚀
 
-`@anmol117/@anmol117/@anmol117/stacksmith` is a simple CLI tool to scaffold fullstack projects with a pre-configured stack. It supports frontend, backend, and fullstack templates with options like Redux, TailwindCSS, React Router, and Express.js.
+`@anmol117/stacksmith` is a simple CLI tool to scaffold fullstack projects with a pre-configured stack. It supports frontend, backend, and fullstack templates with options like Redux, TailwindCSS, React Router, and Express.js.
 
 ## 📦 Features
 
