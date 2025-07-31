@@ -1,6 +1,6 @@
 {
   "name": "@anmol117/stacksmith",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI to scaffold fullstack apps with Vite + Tailwind + React Router + backend",
   "type": "module",
   "bin": {
